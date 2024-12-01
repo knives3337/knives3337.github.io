@@ -1,0 +1,102 @@
+/* CSS kintamieji */
+:root {
+    --background-color: #ffffff;
+    --text-color: #333;
+    --header-background: #ffffff;
+    --header-text: #000000;
+    --border-color: #ffffff;
+    --image-border: #ffffff;
+    --link-background: #0056b3;
+    --link-text: #000000;
+    --hover-background: #14034a;
+    --hover-text: #0056b3;
+}
+
+[data-theme="dark"] {
+    --background-color: #121212;
+    --text-color: #f4f4f9;
+    --header-background: #1e1e1e;
+    --header-text: #ffffff;
+    --border-color: #333333;
+    --image-border: #333333;
+    --link-background: #444444;
+    --link-text: #ffffff;
+    --hover-background: #ffdd57;
+    --hover-text: #1e1e1e;
+}
+
+/* Bendras stilius */
+body {
+    font-family: 'Comic Sans MS', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header stilius */
+header {
+    padding: 20px;
+    background-color: var(--header-background);
+    color: var(--header-text);
+    border-bottom: 5px solid var(--border-color);
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+header p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+/* Paveikslėlių stilius */
+header img {
+    display: block;
+    margin: 10px auto;
+    border: 3px solid var(--image-border);
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease;
+}
+
+header img:hover {
+    transform: scale(1.1);
+    border-color: var(--hover-background);
+}
+
+/* Nuorodų stilius */
+header a {
+    text-decoration: none;
+    color: var(--link-text);
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    background-color: var(--link-background);
+    transition: all 0.3s ease-in-out;
+}
+
+header a:hover {
+    background-color: var(--hover-background);
+    color: var(--hover-text);
+    border-color: var(--header-background);
+}
+
+/* Box Model naudojimas */
+header p i {
+    font-size: 0.9rem;
+    color: #cccccc;
+}
+
+header p:not(:last-child) {
+    margin-bottom: 15px;
+}

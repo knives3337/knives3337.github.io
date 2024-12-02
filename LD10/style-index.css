@@ -1,4 +1,4 @@
-/* Light Theme Variables */
+/* General Styles */
 :root {
     --background-color: #f9f9f9; /* Soft off-white */
     --text-color: #4a4a4a; /* Darker gray for easy readability */
@@ -27,7 +27,6 @@
     --hover-text: #1e1e1e;
 }
 
-/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -35,6 +34,7 @@ body {
     padding: 0;
     background-color: var(--background-color);
     color: var(--text-color);
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Header Styles */
@@ -42,10 +42,12 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
     background-color: var(--header-background);
     color: var(--header-text);
     padding: 10px 20px;
     border-bottom: 5px solid var(--border-color);
+    gap: 10px; /* Adds space between elements */
 }
 
 header .logo {
@@ -62,9 +64,9 @@ header h1 {
 header nav {
     display: flex;
     gap: 15px;
+    flex-wrap: wrap; /* Allows links to wrap */
 }
 
-/* Navigation Link Styles */
 header nav a {
     text-decoration: none;
     color: var(--header-text);
@@ -81,20 +83,24 @@ header nav a:hover {
     border-color: var(--hover-text);
 }
 
+/* Main Section */
 main {
     display: flex;
-    flex-direction: column; /* Ensures the content stacks vertically */
-    align-items: center; /* Centers content horizontally */
-    justify-content: center; /* Centers content vertically */
-    min-height: calc(100vh - 80px); /* Adjust height to fill viewport minus header/footer */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 80px); /* Adjust height for header/footer */
     padding: 20px;
     background-color: var(--background-color);
     color: var(--text-color);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for better focus */
-    border-radius: 8px; /* Rounded edges for a modern look */
-    margin: auto; /* Centers the main section */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px;
+    margin: auto;
+    width: 90%; /* Limit width to prevent overflow */
+    max-width: 1200px; /* Prevent stretching on large screens */
 }
 
+/* Footer Section */
 footer {
     background-color: var(--link-background);
     color: var(--text-color);
@@ -105,12 +111,14 @@ footer {
 }
 
 footer .social-icons {
+    display: flex;
+    justify-content: center;
     margin-bottom: 10px;
+    gap: 15px; /* Space between icons */
 }
 
 footer .social-icons a {
     display: inline-block;
-    margin: 0 10px;
     text-decoration: none;
 }
 
@@ -139,6 +147,7 @@ footer .contact-info a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Stack header elements */
     header {
         flex-direction: column;
         align-items: center;
@@ -149,5 +158,18 @@ footer .contact-info a:hover {
         flex-direction: column;
         gap: 10px;
         margin-top: 10px;
+    }
+
+    /* Adjust font sizes for smaller screens */
+    header h1 {
+        font-size: 1.25rem;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    footer {
+        padding: 15px;
     }
 }

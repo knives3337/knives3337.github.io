@@ -1,17 +1,19 @@
-/* CSS kintamieji */
+/* Light Theme Variables */
 :root {
-    --background-color: #ffffff;
-    --text-color: #333;
-    --header-background: #ffffff;
-    --header-text: #000000;
-    --border-color: #ffffff;
-    --image-border: #ffffff;
-    --link-background: #0056b3;
-    --link-text: #000000;
-    --hover-background: #14034a;
-    --hover-text: #0056b3;
+    --background-color: #f9f9f9; /* Soft off-white */
+    --text-color: #4a4a4a; /* Darker gray for easy readability */
+    --header-background: #e3eaf0; /* Muted light blue for a calm feel */
+    --header-text: #333333; /* Neutral gray */
+    --border-color: #d1d9df; /* Subtle border color */
+    --image-border: #d1d9df;
+    --link-background: #4682b4; /* Soft steel blue */
+    --link-text: #ffffff;
+    --hover-background: #5a9adf; /* Lighter blue on hover */
+    --hover-text: #ffffff;
 }
 
+
+/* Dark Theme Variables */
 [data-theme="dark"] {
     --background-color: #121212;
     --text-color: #f4f4f9;
@@ -25,78 +27,127 @@
     --hover-text: #1e1e1e;
 }
 
-/* Bendras stilius */
+/* General Styles */
 body {
-    font-family: 'Comic Sans MS', sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
     color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Header stilius */
+/* Header Styles */
 header {
-    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: var(--header-background);
     color: var(--header-text);
+    padding: 10px 20px;
     border-bottom: 5px solid var(--border-color);
-    text-align: center;
+}
+
+header .logo {
+    height: 50px;
+    width: auto;
 }
 
 header h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin: 0;
 }
 
-header p {
-    margin: 10px 0;
-    font-size: 1.1rem;
+header nav {
+    display: flex;
+    gap: 15px;
 }
 
-/* Paveikslėlių stilius */
-header img {
-    display: block;
-    margin: 10px auto;
-    border: 3px solid var(--image-border);
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out, border-color 0.3s ease;
-}
-
-header img:hover {
-    transform: scale(1.1);
-    border-color: var(--hover-background);
-}
-
-/* Nuorodų stilius */
-header a {
+/* Navigation Link Styles */
+header nav a {
     text-decoration: none;
-    color: var(--link-text);
-    font-weight: bold;
-    font-size: 1.2rem;
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
+    color: var(--header-text);
+    font-weight: 600;
+    padding: 8px 15px;
     border: 2px solid transparent;
     border-radius: 5px;
-    background-color: var(--link-background);
     transition: all 0.3s ease-in-out;
 }
 
-header a:hover {
+header nav a:hover {
     background-color: var(--hover-background);
     color: var(--hover-text);
-    border-color: var(--header-background);
+    border-color: var(--hover-text);
 }
 
-/* Box Model naudojimas */
-header p i {
-    font-size: 0.9rem;
-    color: #cccccc;
+main {
+    display: flex;
+    flex-direction: column; /* Ensures the content stacks vertically */
+    align-items: center; /* Centers content horizontally */
+    justify-content: center; /* Centers content vertically */
+    min-height: calc(100vh - 80px); /* Adjust height to fill viewport minus header/footer */
+    padding: 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for better focus */
+    border-radius: 8px; /* Rounded edges for a modern look */
+    margin: auto; /* Centers the main section */
 }
 
-header p:not(:last-child) {
-    margin-bottom: 15px;
+footer {
+    background-color: var(--link-background);
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 20px;
+    border-top: 5px solid var(--border-color);
+}
+
+footer .social-icons {
+    margin-bottom: 10px;
+}
+
+footer .social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer .social-icons img {
+    height: 30px;
+    width: 30px;
+    transition: transform 0.2s;
+}
+
+footer .social-icons a:hover img {
+    transform: scale(1.2);
+}
+
+footer .contact-info p {
+    margin: 5px 0;
+}
+
+footer .contact-info a {
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
+footer .contact-info a:hover {
+    color: #ffcc00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    header nav {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
 }

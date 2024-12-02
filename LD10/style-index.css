@@ -1,22 +1,51 @@
-/* Bendras stilius */
+/* Light Theme Variables */
+:root {
+    --background-color: #f9f9f9; /* Soft off-white */
+    --text-color: #4a4a4a; /* Darker gray for easy readability */
+    --header-background: #e3eaf0; /* Muted light blue for a calm feel */
+    --header-text: #333333; /* Neutral gray */
+    --border-color: #d1d9df; /* Subtle border color */
+    --image-border: #d1d9df;
+    --link-background: #4682b4; /* Soft steel blue */
+    --link-text: #ffffff;
+    --hover-background: #5a9adf; /* Lighter blue on hover */
+    --hover-text: #ffffff;
+}
+
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+    --background-color: #121212;
+    --text-color: #f4f4f9;
+    --header-background: #1e1e1e;
+    --header-text: #ffffff;
+    --border-color: #333333;
+    --image-border: #333333;
+    --link-background: #444444;
+    --link-text: #ffffff;
+    --hover-background: #ffdd57;
+    --hover-text: #1e1e1e;
+}
+
+/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #000000;
-    color: #ffffff;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
-/* Header stilius */
+/* Header Styles */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #007bff;
-    color: white;
+    background-color: var(--header-background);
+    color: var(--header-text);
     padding: 10px 20px;
-    border-bottom: 5px solid #0056b3;
+    border-bottom: 5px solid var(--border-color);
 }
 
 header .logo {
@@ -35,10 +64,10 @@ header nav {
     gap: 15px;
 }
 
-/* Nuorodų stilius */
+/* Navigation Link Styles */
 header nav a {
     text-decoration: none;
-    color: #ffffff;
+    color: var(--header-text);
     font-weight: 600;
     padding: 8px 15px;
     border: 2px solid transparent;
@@ -47,19 +76,32 @@ header nav a {
 }
 
 header nav a:hover {
-    background-color: #0056b3;
-    color: #ffffff;
-    border-color: #ffffff;
+    background-color: var(--hover-background);
+    color: var(--hover-text);
+    border-color: var(--hover-text);
 }
 
-/* Footer stilius */
+main {
+    display: flex;
+    flex-direction: column; /* Ensures the content stacks vertically */
+    align-items: center; /* Centers content horizontally */
+    justify-content: center; /* Centers content vertically */
+    min-height: calc(100vh - 80px); /* Adjust height to fill viewport minus header/footer */
+    padding: 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for better focus */
+    border-radius: 8px; /* Rounded edges for a modern look */
+    margin: auto; /* Centers the main section */
+}
+
 footer {
-    background-color: #0056b3;
-    color: white;
+    background-color: var(--link-background);
+    color: var(--text-color);
     text-align: center;
     padding: 20px 10px;
     margin-top: 20px;
-    border-top: 5px solid #003d7a;
+    border-top: 5px solid var(--border-color);
 }
 
 footer .social-icons {
@@ -87,7 +129,7 @@ footer .contact-info p {
 }
 
 footer .contact-info a {
-    color: white;
+    color: var(--text-color);
     text-decoration: underline;
 }
 
@@ -95,7 +137,7 @@ footer .contact-info a:hover {
     color: #ffcc00;
 }
 
-/* Responsive dizainas */
+/* Responsive Design */
 @media (max-width: 768px) {
     header {
         flex-direction: column;

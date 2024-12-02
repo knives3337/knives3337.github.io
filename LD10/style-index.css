@@ -1,0 +1,175 @@
+/* General Styles */
+:root {
+    --background-color: #f9f9f9; /* Soft off-white */
+    --text-color: #4a4a4a; /* Darker gray for easy readability */
+    --header-background: #e3eaf0; /* Muted light blue for a calm feel */
+    --header-text: #333333; /* Neutral gray */
+    --border-color: #d1d9df; /* Subtle border color */
+    --image-border: #d1d9df;
+    --link-background: #4682b4; /* Soft steel blue */
+    --link-text: #ffffff;
+    --hover-background: #5a9adf; /* Lighter blue on hover */
+    --hover-text: #ffffff;
+}
+
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+    --background-color: #121212;
+    --text-color: #f4f4f9;
+    --header-background: #1e1e1e;
+    --header-text: #ffffff;
+    --border-color: #333333;
+    --image-border: #333333;
+    --link-background: #444444;
+    --link-text: #ffffff;
+    --hover-background: #ffdd57;
+    --hover-text: #1e1e1e;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    background-color: var(--header-background);
+    color: var(--header-text);
+    padding: 10px 20px;
+    border-bottom: 5px solid var(--border-color);
+    gap: 10px; /* Adds space between elements */
+}
+
+header .logo {
+    height: 50px;
+    width: auto;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+header nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap; /* Allows links to wrap */
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--header-text);
+    font-weight: 600;
+    padding: 8px 15px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+header nav a:hover {
+    background-color: var(--hover-background);
+    color: var(--hover-text);
+    border-color: var(--hover-text);
+}
+
+/* Main Section */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 80px); /* Adjust height for header/footer */
+    padding: 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px;
+    margin: auto;
+    width: 90%; /* Limit width to prevent overflow */
+    max-width: 1200px; /* Prevent stretching on large screens */
+}
+
+/* Footer Section */
+footer {
+    background-color: var(--link-background);
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 20px;
+    border-top: 5px solid var(--border-color);
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    gap: 15px; /* Space between icons */
+}
+
+footer .social-icons a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+footer .social-icons img {
+    height: 30px;
+    width: 30px;
+    transition: transform 0.2s;
+}
+
+footer .social-icons a:hover img {
+    transform: scale(1.2);
+}
+
+footer .contact-info p {
+    margin: 5px 0;
+}
+
+footer .contact-info a {
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
+footer .contact-info a:hover {
+    color: #ffcc00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Stack header elements */
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    header nav {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    /* Adjust font sizes for smaller screens */
+    header h1 {
+        font-size: 1.25rem;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    footer {
+        padding: 15px;
+    }
+}

@@ -1,17 +1,23 @@
-/* CSS kintamieji */
+/* General Styles */
 :root {
-    --background-color: #ffffff;
-    --text-color: #333;
-    --header-background: #ffffff;
-    --header-text: #000000;
-    --border-color: #ffffff;
-    --image-border: #ffffff;
-    --link-background: #0056b3;
-    --link-text: #000000;
-    --hover-background: #14034a;
-    --hover-text: #0056b3;
+    --background-color: #f9f9f9;
+    --text-color: #4a4a4a;
+    --header-background: #e3eaf0;
+    --header-text: #333333;
+    --border-color: #d1d9df;
+    --image-border: #d1d9df;
+    --link-background: #4682b4;
+    --link-text: #ffffff;
+    --hover-background: #5a9adf;
+    --hover-text: #ffffff;
+
+    /* Font Sizes */
+    --base-font-size: 16px;
+    --heading-size: 2rem; /* Heading */
+    --text-size: 1rem; /* Paragraph text */
 }
 
+/* Dark Theme */
 [data-theme="dark"] {
     --background-color: #121212;
     --text-color: #f4f4f9;
@@ -20,83 +26,193 @@
     --border-color: #333333;
     --image-border: #333333;
     --link-background: #444444;
-    --link-text: #ffffff;
     --hover-background: #ffdd57;
     --hover-text: #1e1e1e;
 }
 
-/* Bendras stilius */
+/* Base Body Styles */
 body {
-    font-family: 'Comic Sans MS', sans-serif;
+    font-family: 'Arial', sans-serif;
+    font-size: var(--base-font-size);
     line-height: 1.6;
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
     color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
 }
 
-/* Header stilius */
+/* Header */
 header {
-    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 20px;
     background-color: var(--header-background);
     color: var(--header-text);
     border-bottom: 5px solid var(--border-color);
-    text-align: center;
+    box-sizing: border-box;
+}
+
+header .logo {
+    height: 50px;
+    width: auto;
 }
 
 header h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-size: var(--heading-size);
+    margin: 0;
 }
 
-header p {
-    margin: 10px 0;
-    font-size: 1.1rem;
+header nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-/* Paveikslėlių stilius */
-header img {
-    display: block;
-    margin: 10px auto;
-    border: 3px solid var(--image-border);
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out, border-color 0.3s ease;
-}
-
-header img:hover {
-    transform: scale(1.1);
-    border-color: var(--hover-background);
-}
-
-/* Nuorodų stilius */
-header a {
+header nav a {
     text-decoration: none;
-    color: var(--link-text);
-    font-weight: bold;
-    font-size: 1.2rem;
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    border: 2px solid transparent;
+    color: var(--header-text);
+    font-weight: 600;
+    padding: 8px 12px;
     border-radius: 5px;
-    background-color: var(--link-background);
     transition: all 0.3s ease-in-out;
 }
 
-header a:hover {
+header nav a:hover {
     background-color: var(--hover-background);
     color: var(--hover-text);
-    border-color: var(--header-background);
 }
 
-/* Box Model naudojimas */
-header p i {
-    font-size: 0.9rem;
-    color: #cccccc;
+math {
+    font-family: 'STIX', 'Cambria Math', 'Latin Modern Math', serif;
 }
 
-header p:not(:last-child) {
-    margin-bottom: 15px;
+
+/* Main Content */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    max-width: 1100px; /* Prevent excessive stretching */
+    margin: 0 auto;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Footer Section */
+footer {
+    background-color: var(--link-background);
+    color: var(--text-color);
+    text-align: center;
+    padding: 15px 10px;
+    border-top: 5px solid var(--border-color);
+    box-sizing: border-box;
+    font-size: 0.95rem; /* Slightly smaller font for footer */
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Space between icons */
+    margin: 10px 0; /* Space above and below */
+    flex-wrap: wrap; /* Ensure icons wrap on smaller screens */
+}
+
+footer .social-icons a {
+    display: inline-block;
+}
+
+footer .social-icons img {
+    height: 30px;
+    width: 30px;
+    transition: transform 0.2s ease;
+}
+
+footer .social-icons a:hover img {
+    transform: scale(1.1);
+}
+
+footer .contact-info {
+    margin: 10px 0; /* Space above and below contact details */
+    font-size: 0.9rem; /* Smaller font for secondary info */
+}
+
+footer .contact-info p,
+footer .contact-info a {
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+footer .contact-info a {
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
+footer .contact-info a:hover {
+    color: var(--hover-background);
+}
+
+footer .theme-toggle {
+    margin-top: 10px;
+}
+
+footer button {
+    background-color: var(--hover-background);
+    color: var(--hover-text);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+footer button:hover {
+    background-color: var(--link-background);
+}
+
+/* Responsive Footer Adjustments */
+@media (max-width: 768px) {
+    footer {
+        font-size: 0.85rem; /* Reduce font size slightly on smaller devices */
+    }
+
+    footer .social-icons img {
+        height: 25px;
+        width: 25px;
+    }
+
+    footer .contact-info {
+        font-size: 0.8rem; /* Make contact info smaller */
+    }
+
+    footer button {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+
+    footer .social-icons {
+        gap: 5px;
+    }
+
+    footer .contact-info {
+        line-height: 1.2;
+    }
+
+    footer button {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
 }

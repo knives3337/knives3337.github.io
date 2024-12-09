@@ -48,7 +48,7 @@ document.getElementById("submitButton").addEventListener("click", () => {
 
     // Spalvos parinkimas pagal vidurkį
     const averageColor =
-        average < 3 ? "red" : average < 7 ? "orange" : "green";
+        average < 5 ? "red" : average < 7 ? "orange" : "green";
 
     console.log(
         `%cVardas: ${name}, Pavardė: ${surname}, Vidurkis: ${average}`,

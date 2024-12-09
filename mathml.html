@@ -27,33 +27,35 @@
         <p>pradinis tekstas goes here</p>
         
         <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-            <mrow>
-              <mstyle displaystyle="true">
-                <mo>&#x222B;</mo> <!-- Integral symbol -->
-                <msub>
-                  <mn>D</mn> <!-- Subscript for the domain -->
-                </msub>
-                <mo>(</mo>
-                <mo>&#x2207;</mo> <!-- Nabla symbol -->
-                <mo>&#x22C5;</mo> <!-- Dot operator -->
-                <mi>F</mi>
-                <mo>)</mo>
-                <mi>dV</mi>
-              </mstyle>
-              <mo>=</mo>
-              <mstyle displaystyle="true">
-                <mo>&#x222B;</mo> <!-- Integral symbol -->
-                <msub>
-                  <mo>&#x2202;</mo> <!-- Boundary symbol -->
-                  <mi>D</mi> <!-- Subscript for boundary -->
-                </msub>
-                <mi>F</mi>
-                <mo>&#x22C5;</mo> <!-- Dot operator -->
-                <mi>n</mi>
-                <mi>dS</mi>
-              </mstyle>
-            </mrow>
-          </math>
+  <mrow>
+    <mstyle displaystyle="true">
+      <munderover> <!-- Integralo riboms viršuje ir apačioje -->
+        <mo>&#x222B;</mo> <!-- Integralo simbolis -->
+        <mi>D</mi> <!-- Apatinė riba -->
+        <mo></mo> <!-- Viršutinė riba nera tai tuscia) -->
+      </munderover>
+      <mo>(</mo>
+      <mo>&#x2207;</mo> <!-- apverstas delta -->
+      <mo>&#x22C5;</mo> <!-- daugybos simbolis -->
+      <mi>F</mi> <!-- mi - identifikatorius o mo - operatorius -->
+      <mo>)</mo>
+      <mi>dV</mi> 
+    </mstyle>
+    <mo>=</mo>
+    <mstyle displaystyle="true">
+      <munderover>
+        <mo>&#x222B;</mo> 
+        <mo>&#x2202;D</mo> 
+        <mo></mo> 
+      </munderover>
+      <mi>F</mi>
+      <mo>&#x22C5;</mo> 
+      <mi>n</mi>
+      <mi>dS</mi>
+    </mstyle>
+  </mrow>
+</math>
+
           
 
           

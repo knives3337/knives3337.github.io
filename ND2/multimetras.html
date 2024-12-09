@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimetro UI</title>
+    <link rel="stylesheet" href="multimeter.css">
+</head>
+<body>
+    <header>
+        <h1>Multimetro Sąsaja</h1>
+    </header>
+    <main>
+        <section class="multimeter">
+            <div class="power-control">
+                <button id="powerButton" class="inactive">Įjungti</button>
+            </div>
+
+            <h2>Pasirinkite režimą</h2>
+            <div class="mode-selector">
+                <button id="voltageMode" disabled>Įtampa</button>
+                <button id="currentMode" disabled>Srovė</button>
+                <button id="resistanceMode" disabled>Varža</button>
+            </div>
+
+            <div id="settingsSection" class="hidden">
+                <h3 id="modeTitle">Parametrai</h3>
+                <div id="settings"></div>
+                <div id="outputSection">
+                    <h3>Reikšmė</h3>
+                    <p id="outputValue">---</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Kūrėjas: Mindaugas Petronis EF23/1</p>
+    </footer>
+    <script src="multimeter.js"></script>
+</body>
+</html>
